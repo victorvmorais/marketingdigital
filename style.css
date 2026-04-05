@@ -766,9 +766,9 @@ body {
   justify-items: center;
 }
 
-/* Quando sobram 2 cards na última linha (10 cards = 3+3+3+1 → force center) */
+/* Quando sobra 1 card na última linha (9 cards = 3+3+3) — todos cheios, sem órfão */
 .services-grid .service-card:nth-child(10) {
-  grid-column: 2 / 3;
+  grid-column: auto;
 }
 
 @media (max-width: 1024px) {
