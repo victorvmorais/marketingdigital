@@ -483,20 +483,20 @@
         </div>
 
         <!-- COLUNA DIREITA: foto superior + imagem wide inferior -->
-        <div class="reveal" style="display:flex; flex-direction:column; gap:14px;">
-          <div class="traj-gallery-top">
-            <div class="traj-img-item">
+        <div class="reveal" style="display:flex; flex-direction:column; gap:14px; height:100%;">
+          <div class="traj-gallery-top" style="flex:1; min-height:0;">
+            <div class="traj-img-item" style="height:100%;">
               <img src="assets/vicport-img6.jpg" alt="Victor Morais — Portfólio" class="section-img traj-img"
                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
               <div class="section-img-placeholder traj-img" style="display:none;"><span class="placeholder-label">vicport-img6.jpg</span></div>
             </div>
-            <div class="traj-img-item">
+            <div class="traj-img-item" style="height:100%;">
               <img src="assets/vicport-img7.jpg" alt="Victor Morais — Portfólio" class="section-img traj-img"
                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
               <div class="section-img-placeholder traj-img" style="display:none;"><span class="placeholder-label">vicport-img7.jpg</span></div>
             </div>
           </div>
-          <div class="traj-img-wide">
+          <div class="traj-img-wide" style="flex:1; height:auto; min-height:0;">
             <img src="assets/vicport-img8.jpg" alt="Victor Morais — Portfólio" class="section-img traj-img"
                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
             <div class="section-img-placeholder traj-img" style="display:none;"><span class="placeholder-label">vicport-img8.jpg</span></div>
