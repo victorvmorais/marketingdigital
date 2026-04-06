@@ -124,7 +124,50 @@ const counterObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
 
 
-// ── Active nav link on scroll ──
+// ── Testimonials Slider ──
+(function () {
+  const track = document.getElementById('testimonials-track');
+  const dots = document.querySelectorAll('.testi-dot');
+  const prevBtn = document.getElementById('testi-prev');
+  const nextBtn = document.getElementById('testi-next');
+
+  if (!track) return;
+
+  const cards = track.querySelectorAll('.testimonial-card');
+  const total = cards.length;
+  // Show 2 cards on desktop, 1 on mobile
+  let perView = window.innerWidth >= 768 ? 2 : 1;
+  let current = 0;
+  const maxIndex = total - perView;
+
+  function getCardWidth() {
+    if (!cards[0]) return 0;
+    return cards[0].offsetWidth + 24; // card + gap
+  }
+
+  function goTo(idx) {
+    current = Math.max(0, Math.min(idx, maxIndex));
+    track.style.transform = `translateX(-${current * getCardWidth()}px)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+
+  prevBtn?.addEventListener('click', () => goTo(current - 1));
+  nextBtn?.addEventListener('click', () => goTo(current + 1));
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => goTo(parseInt(dot.dataset.idx)));
+  });
+
+  // Auto-advance every 5 seconds
+  setInterval(() => {
+    goTo(current >= maxIndex ? 0 : current + 1);
+  }, 5000);
+
+  // Recalculate on resize
+  window.addEventListener('resize', () => {
+    perView = window.innerWidth >= 768 ? 2 : 1;
+    goTo(0);
+  }, { passive: true });
+})();
 const sections = document.querySelectorAll('section[id], footer[id]');
 const navLinks = document.querySelectorAll('.nav-link');
 
