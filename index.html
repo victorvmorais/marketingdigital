@@ -423,8 +423,8 @@
         </div>
 
         <!-- COLUNA DIREITA: duas fotos empilhadas -->
-        <div class="reveal" style="display:flex; flex-direction:column; gap:14px;">
-          <div class="results-img-wrap" style="flex:1; min-height:300px;">
+        <div class="reveal results-img-col">
+          <div class="results-img-wrap results-img-top">
             <img src="assets/vicport-img5.jpg"
                  alt="Resultados de marketing documentados"
                  class="section-img results-img"
@@ -433,7 +433,7 @@
               <span class="placeholder-label">vicport-img5.jpg</span>
             </div>
           </div>
-          <div class="results-img-wrap" style="flex:1; min-height:220px;">
+          <div class="results-img-wrap results-img-bottom">
             <img src="assets/vicport-img10.jpg"
                  alt="Resultados Victor Morais"
                  class="section-img results-img"
@@ -464,11 +464,11 @@
         </p>
       </div>
 
-      <div class="grid lg:grid-cols-2 gap-16 items-start">
+      <div class="grid lg:grid-cols-2 gap-16 items-stretch">
 
         <!-- COLUNA ESQUERDA: texto narrativo -->
-        <div class="reveal">
-          <div class="traj-narrative">
+        <div class="reveal" style="display:flex; flex-direction:column;">
+          <div class="traj-narrative" style="flex:1;">
             <p class="text-lg text-subtle leading-relaxed mb-5">
               Comecei no <strong class="kw">Sistema Verdes Mares de Comunicação</strong>, um dos maiores grupos de mídia do Nordeste, onde aprendi os fundamentos de narrativa, comunicação de massa e produção editorial com padrão profissional. Depois passei pela <strong class="kw">CK Comunicação</strong>, agência onde gerenciei múltiplos clientes ao mesmo tempo e desenvolvi visão de mercado, agilidade de execução e domínio sobre branding e conteúdo em diferentes segmentos.
             </p>
@@ -481,9 +481,9 @@
           </div>
         </div>
 
-        <!-- COLUNA DIREITA: grid 2x2 de fotos -->
-        <div class="reveal">
-          <div class="traj-gallery">
+        <!-- COLUNA DIREITA: grid 2x2 de fotos com altura total -->
+        <div class="reveal" style="display:flex; flex-direction:column;">
+          <div class="traj-gallery traj-gallery-full">
             <div class="traj-img-item">
               <img src="assets/vicport-img6.jpg" alt="Victor Morais — Portfólio" class="section-img traj-img"
                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
